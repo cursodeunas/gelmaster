@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gel Master — Domina la Química de los Geles</title>
+  <meta name="description" content="Gel Master: curso online para manicuristas. Domina la química de los geles, bases, rubber base y manicura rusa. 19 clases, certificado incluido.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700;900&family=Dancing+Script:wght@400;600;700&family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #F54D9D;
+      --accent: #C91F6C;
+      --secondary: #2A1120;
+      --bg-light: #FAF7F9;
+      --bg-gray: #F3F4F6;
+      --text: #4D4D4D;
+      --white: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--white);
+      overflow-x: hidden;
+    }
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; color: var(--secondary); }
+    .font-script { font-family: 'Dancing Script', cursive; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* Banner */
+    .banner {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      background: linear-gradient(90deg, #C91F6C 0%, #F54D9D 50%, #C91F6C 100%);
+      color: var(--white); padding: 8px 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .banner-text {
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px;
+    }
+    .banner-btn {
+      background: var(--white); color: var(--primary);
+      font-size: 11px; font-weight: 900; padding: 6px 14px;
+      border-radius: 50px; text-decoration: none; text-transform: uppercase;
+      letter-spacing: 1px; display: inline-flex; align-items: center; gap: 4px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .banner-btn:hover { transform: scale(1.08); box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+
+    /* Hero */
+    .hero {
+      padding: 110px 16px 60px; text-align: center;
+    }
+    .hero-title {
+    font-family: 'Montserrat', serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.05;
+    max-width: 900px;
+    margin: 0 auto 24px;
+
+
+    }
+    .hero-title .highlight { color: var(--primary); }
+    .hero-photo {
+      max-width: 360px; margin: 0 auto 24px;
+    }
+    .hero-subtitle {
+      font-size: 16px; color: var(--text); max-width: 600px;
+      margin: 0 auto 24px; line-height: 1.6;
+    }
+    .badges {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+      max-width: 500px; margin: 0 auto;
+    }
+    .badge {
+      background: #FFF0F5; padding: 10px; border-radius: 8px;
+      font-size: 13px; font-weight: 600; color: var(--secondary);
+      text-align: center;
+    }
+
+    /* Pain Points */
+    .pain-points {
+      background: var(--bg-light); padding: 60px 16px;
+    }
+    .section-title {
+      font-size: 28px; font-weight: 700; text-align: center; margin-bottom: 32px;
+    }
+    .pain-list { max-width: 700px; margin: 0 auto; }
+    .pain-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      background: var(--white); padding: 16px; border-radius: 12px;
+      margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      border: 1px solid #FFE4EC;
+    }
+    .pain-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+    .pain-text { font-size: 16px; color: var(--text); line-height: 1.5; }
+    .pain-conclusion {
+      text-align: center; max-width: 650px; margin: 40px auto 0;
+      font-size: 16px; color: var(--text);
+    }
+    .pain-conclusion .brand-line {
+      font-family: 'Cormorant Garamond', serif; font-size: 32px;
+      font-weight: 700; color: var(--accent); margin-top: 20px;
+    }
+    .pain-conclusion .brand-line .script {
+      font-family: 'Dancing Script', cursive; font-size: 48px; font-weight: 400; margin-left: 8px;
+    }
+
+    /* What is */
+    .what-is { padding: 60px 16px; }
+    .what-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: 40px;
+    }
+    .what-img { max-width: 500px; width: 100%; }
+    .what-text { max-width: 500px; width: 100%; }
+    .what-text h2 { font-size: 28px; margin-bottom: 16px; }
+    .what-text p { font-size: 16px; margin-bottom: 12px; line-height: 1.6; }
+    .what-text .bold { font-weight: 600; color: var(--secondary); }
+    .check-item {
+      display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;
+    }
+    .check-item .icon { font-size: 18px; margin-top: 2px; }
+
+    /* Target */
+    .target {
+      background: var(--secondary); color: var(--white); padding: 60px 16px;
+    }
+    .target .section-title { color: var(--white); }
+    .target-list { max-width: 700px; margin: 0 auto; }
+    .target-item {
+      display: flex; align-items: flex-start; gap: 14px;
+      background: rgba(255,255,255,0.05); padding: 18px; border-radius: 12px;
+      margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.1);
+    }
+    .target-item .icon { font-size: 22px; margin-top: 2px; }
+    .target-item p { font-size: 16px; color: rgba(255,255,255,0.9); line-height: 1.5; }
+
+    /* Temario */
+    .temario {
+      background: rgba(255,240,245,0.5); padding: 60px 16px; text-align: center;
+    }
+    .temario-img {
+      max-width: 800px; margin: 0 auto;
+    }
+
+    /* Pricing */
+    .pricing {
+      background: var(--secondary); padding: 60px 16px; text-align: center;
+    }
+    .pricing h2 {
+      color: var(--primary); font-size: 36px; margin-bottom: 16px;
+    }
+    .pricing .lead {
+      color: var(--white); font-size: 18px; font-weight: 600;
+      max-width: 600px; margin: 0 auto 12px;
+    }
+    .pricing .sub {
+      color: rgba(255,255,255,0.7); font-size: 16px;
+      max-width: 600px; margin: 0 auto 32px;
+    }
+    .price-card {
+      max-width: 500px; margin: 0 auto;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(245,77,157,0.3);
+      border-radius: 16px; padding: 32px 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      position: relative; overflow: hidden;
+    }
+    .price-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 4px; background: linear-gradient(90deg, var(--primary), var(--accent));
+    }
+    .price-tag {
+      display: inline-block; background: var(--primary); color: var(--white);
+      padding: 6px 18px; border-radius: 50px;
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1px; margin-bottom: 24px;
+    }
+    .price-old {
+      color: rgba(255,255,255,0.5); font-size: 20px; text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+    .price-new {
+      color: var(--primary); font-size: 56px; font-weight: 900;
+      line-height: 1; margin-bottom: 24px;
+    }
+    .cta-btn {
+      display: block; width: 100%;
+      background: var(--primary); color: var(--white);
+      text-align: center; padding: 14px 24px;
+      border-radius: 50px; text-decoration: none;
+      font-size: 14px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1px; cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: bounce 1.4s ease-in-out infinite;
+    }
+    .cta-btn:hover {
+      transform: scale(1.04);
+      box-shadow: 0 8px 30px rgba(245,77,157,0.6);
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+    .secure {
+      color: rgba(255,255,255,0.6); font-size: 13px; margin-top: 16px;
+      display: flex; align-items: center; justify-content: center; gap: 6px;
+    }
+
+    /* FAQ */
+    .faq { background: var(--bg-gray); padding: 60px 16px; }
+    .faq-container { max-width: 650px; margin: 0 auto; }
+    .faq-item {
+      background: var(--white); border-radius: 12px;
+      margin-bottom: 8px; border: 1px solid #E5E7EB; overflow: hidden;
+    }
+    .faq-q {
+      padding: 16px; font-size: 16px; font-weight: 600; color: var(--secondary);
+      cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+    }
+    .faq-q:hover { color: var(--primary); }
+    .faq-a {
+      padding: 0 16px 16px; font-size: 15px; color: var(--text); line-height: 1.6;
+      display: none;
+    }
+    .faq-item.active .faq-a { display: block; }
+    .faq-item.active .faq-q { color: var(--primary); }
+    .faq-toggle { font-size: 18px; transition: transform 0.2s; }
+    .faq-item.active .faq-toggle { transform: rotate(180deg); }
+
+    /* Footer */
+    .footer {
+      background: var(--secondary); color: var(--white);
+      padding: 40px 16px; border-top: 4px solid var(--primary);
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: 20px;
+    }
+    .footer-brand h3 {
+      font-family: 'Cormorant Garamond', serif; font-size: 24px;
+      font-weight: 700; color: var(--white); text-align: center;
+    }
+    .footer-brand .script {
+      font-family: 'Dancing Script', cursive; font-size: 32px;
+      color: var(--primary); text-align: center; margin-top: 4px;
+    }
+    .footer-btn {
+      background: var(--primary); color: var(--white);
+      padding: 12px 28px; border-radius: 50px; text-decoration: none;
+      font-size: 13px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1px; display: inline-flex; align-items: center; gap: 6px;
+      transition: transform 0.2s;
+    }
+    .footer-btn:hover { transform: scale(1.06); }
+
+    /* Desktop */
+    @media (min-width: 768px) {
+      .banner-text { font-size: 13px; }
+      .banner-btn { font-size: 12px; padding: 8px 18px; }
+      .hero { padding: 130px 24px 80px; }
+      .hero-title { font-size: 48px; }
+      .hero-subtitle { font-size: 18px; }
+      .badges { grid-template-columns: repeat(4, 1fr); }
+      .section-title { font-size: 36px; }
+      .what-grid { flex-direction: row; gap: 60px; }
+      .price-new { font-size: 72px; }
+      .cta-btn { font-size: 16px; padding: 16px 32px; }
+      .footer-inner { flex-direction: row; justify-content: space-between; }
+      .footer-brand h3, .footer-brand .script { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Banner -->
+  <div class="banner">
+    <span class="banner-text">ACCEDE AQUÍ AHORA</span>
+    <a href="https://go.hotmart.com/G102460115U?ap=4127" target="_blank" rel="noopener" class="banner-btn">
+      INSCRIBIRME →
+    </a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1 class="hero-title">
+      Domina la <span class="highlight">química</span> de los geles y haz aplicaciones más seguras y profesionales
+    </h1>
+    <div class="hero-photo">
+      <img src="ChatGPT%20Image%2020%20jun%202026,%2009_01_43.png" alt="Instructora EN Gerimar">
+    </div>
+    <p class="hero-subtitle">
+      Aprende a trabajar correctamente con bases, rubber base, geles de construcción y manicura rusa, entendiendo cómo interactúan los productos con la placa ungueal.
+    </p>
+    <div class="badges">
+      <div class="badge">✔ Certificado incluido</div>
+      <div class="badge">✔ Acceso inmediato 24/7</div>
+      <div class="badge">✔ 19 clases paso a paso</div>
+      <div class="badge">✔ Disponible desde cualquier país</div>
+    </div>
+  </section>
+
+  <!-- Pain Points -->
+  <section class="pain-points">
+    <div class="section-title">¿Te ha pasado alguna de estas cosas?</div>
+    <div class="pain-list">
+      <div class="pain-item">
+        <span class="pain-icon">❌</span>
+        <p class="pain-text">El gel se desprende a los pocos días.</p>
+      </div>
+      <div class="pain-item">
+        <span class="pain-icon">❌</span>
+        <p class="pain-text">No sabes cuándo usar primer ni cuánto aplicar.</p>
+      </div>
+      <div class="pain-item">
+        <span class="pain-icon">❌</span>
+        <p class="pain-text">Te confunden los niveles de acidez de los productos.</p>
+      </div>
+      <div class="pain-item">
+        <span class="pain-icon">❌</span>
+        <p class="pain-text">Has escuchado hablar del TPO pero no entiendes realmente por qué es importante.</p>
+      </div>
+      <div class="pain-item">
+        <span class="pain-icon">❌</span>
+        <p class="pain-text">Compras productos recomendados por otras personas sin saber si son compatibles entre sí.</p>
+      </div>
+      <div class="pain-item">
+        <span class="pain-icon">❌</span>
+        <p class="pain-text">Tus resultados son inconsistentes aunque sigas los mismos pasos.</p>
+      </div>
+    </div>
+    <div class="pain-conclusion">
+      <p>Si tu respuesta es SÍ, no te preocupes, muchas manicuristas aprenden solo técnicas, pero pocas entienden la química que existe detrás de los productos que utilizan todos los días.</p>
+      <p class="brand-line">Por eso creamos <span class="font-script script">Gel Master</span></p>
+    </div>
+  </section>
+
+  <!-- What is Gel Master -->
+  <section class="what-is">
+    <div class="what-grid">
+      <div class="what-img">
+        <img src="deddb098-ffb6-4a25-9465-143494c2f02a.png" alt="Gel Master Course Cover">
+      </div>
+      <div class="what-text">
+        <h2>¿Qué es Gel Master?</h2>
+        <p>Gel Master es un curso online especializado que combina conocimientos técnicos sobre productos para uñas con prácticas de manicura rusa y construcción en gel.</p>
+        <p class="bold">El objetivo es ayudarte a comprender:</p>
+        <div class="check-item">
+          <span class="icon">✅</span>
+          <p>Cómo funcionan realmente los geles.</p>
+        </div>
+        <div class="check-item">
+          <span class="icon">✅</span>
+          <p>Cuándo utilizar cada tipo de base.</p>
+        </div>
+        <div class="check-item">
+          <span class="icon">✅</span>
+          <p>Cómo evitar errores que comprometen la adherencia.</p>
+        </div>
+        <div class="check-item">
+          <span class="icon">✅</span>
+          <p>Qué productos pueden afectar la placa ungueal.</p>
+        </div>
+        <div class="check-item">
+          <span class="icon">✅</span>
+          <p>Cómo trabajar de forma más profesional y consciente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Target Audience -->
+  <section class="target">
+    <div class="section-title">Este Programa es Para Ti Si...</div>
+    <div class="target-list">
+      <div class="target-item">
+        <span class="icon">✨</span>
+        <p>Ya realizas servicios de uñas y quieres mejorar tus resultados.</p>
+      </div>
+      <div class="target-item">
+        <span class="icon">✨</span>
+        <p>Estás iniciando y deseas construir bases sólidas desde el principio.</p>
+      </div>
+      <div class="target-item">
+        <span class="icon">✨</span>
+        <p>Quieres comprender qué ocurre detrás de cada producto que utilizas.</p>
+      </div>
+      <div class="target-item">
+        <span class="icon">✨</span>
+        <p>Buscas especializarte en construcción en gel y manicura rusa.</p>
+      </div>
+      <div class="target-item">
+        <span class="icon">✨</span>
+        <p>Deseas reducir errores de aplicación y mejorar la duración de tus trabajos.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Temario -->
+  <section class="temario">
+    <div class="section-title">Conoce el Temario</div>
+    <div class="temario-img">
+      <img src="photo_5019655646550363196_y_1781886929365.jpg" alt="Temario de Gel Master">
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing">
+    <h2>Inversión Especial</h2>
+    <p class="lead">Accede hoy mismo a las 19 clases de Gel Master y comienza a comprender la ciencia detrás de los productos que utilizas cada día.</p>
+    <p class="sub">Aprende a trabajar con mayor criterio, mejores resultados y más confianza profesional.</p>
+    <div class="price-card">
+      <div class="price-tag">Gran Oferta</div>
+      <div class="price-old">$150 USD</div>
+      <div class="price-new">$72 USD</div>
+      <a href="https://go.hotmart.com/G102460115U?ap=4127" target="_blank" rel="noopener" class="cta-btn">
+        QUIERO INSCRIBIRME AHORA →
+      </a>
+      <div class="secure">🔒 Pago 100% Seguro</div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="section-title">Preguntas Frecuentes</div>
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('active')">
+          ¿Necesito experiencia previa?
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-a">No necesariamente. El contenido está organizado desde fundamentos hasta aplicaciones más avanzadas.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('active')">
+          ¿Las clases están grabadas?
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-a">Sí. Tienes acceso vitalicio para avanzar a tu ritmo.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('active')">
+          ¿Incluye certificado?
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-a">Sí, el programa incluye certificado de finalización.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('active')">
+          ¿Puedo verlo desde mi celular?
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-a">Sí. Puedes acceder desde celular, tablet o computador.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h3>EN Gerimar</h3>
+        <div class="font-script script">Gel Master</div>
+      </div>
+      <a href="https://go.hotmart.com/G102460115U?ap=4127" target="_blank" rel="noopener" class="footer-btn">
+        INSCRIBIRME AHORA →
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>
